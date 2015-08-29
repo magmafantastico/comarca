@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="">
+<html lang="en" class="lato">
 <head>
 	<meta charset="UTF-8">
 	<title>Comarca</title>
@@ -75,7 +75,7 @@
 	}
 
 	#gadget-about .about-container {
-		margin: 1em 0 1.5em 2.25em;
+		margin: 3rem 0 1.5em 2.25em;
 		width: 48em;
 	}
 
@@ -86,32 +86,49 @@
 
 	#gadget-about h1 {
 		font-size: 1.5em;
+		font-weight: 400;
 	}
 
 </style>
 
-<header class="gadget-wrapper white flex justify-center">
+<header class="gadget-wrapper grey-100 flex justify-center">
 
 	<section class="gadget-container justify-between flex-column">
 
 		<div class="grid justify-between">
 
-			<article class="item-wrapper small">
-				<div id="toggle-about" class="item-inner white">
-					<img src="img/icon-01.png" alt="logo"/>
-				</div>
-			</article>
+			<div class="grid">
+
+				<article class="item-wrapper small">
+					<div id="toggle-about" class="item-inner grey-100">
+						<img src="img/icon-01.png" alt="logo" class="opacity-50 h-opacity-1"/>
+					</div>
+				</article>
+
+				<article id="gadget-about" class="font-grey-700">
+					<div class="about-container">
+
+						<h1>Jornal da Comarca</h1>
+
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium ad at dignissimos eaque, eius eum fugiat fugit harum id itaque labore, libero officia optio pariatur, quo reprehenderit tempore vitae voluptatem.</p>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus ad alias architecto, distinctio dolorem ea et, ipsa itaque maiores, mollitia nobis possimus quam sed sint ullam veniam voluptas voluptatem voluptatum?</p>
+						<p>Diretor: Cláudio Pissolito</p>
+
+					</div>
+				</article>
+
+			</div>
 
 			<div class="grid flex-row">
 
 				<article class="item-wrapper small">
-					<div class="item-inner white">
+					<div class="item-inner grey-100">
 						<img src="img/logotype-lato-fresh_Logo.png" alt="logo"/>
 					</div>
 				</article>
 
 				<article class="item-wrapper small">
-					<div class="item-inner white">
+					<div class="item-inner grey-100">
 						<img src="img/logotype-lato-fresh_Logo.png" alt="logo"/>
 					</div>
 				</article>
@@ -119,20 +136,6 @@
 			</div>
 
 		</div>
-
-		<article id="gadget-about">
-
-			<div class="about-container">
-
-				<h1>Jornal da Comarca</h1>
-
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium ad at dignissimos eaque, eius eum fugiat fugit harum id itaque labore, libero officia optio pariatur, quo reprehenderit tempore vitae voluptatem.</p>
-
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus ad alias architecto, distinctio dolorem ea et, ipsa itaque maiores, mollitia nobis possimus quam sed sint ullam veniam voluptas voluptatem voluptatum?</p>
-
-			</div>
-
-		</article>
 
 	</section>
 
@@ -161,7 +164,7 @@
 	*/
 
 	.isotope-wrapper {
-		border-top-width: 4px;
+		border-top-width: 2px;
 		border-top-style: solid;
 		padding: 1.5em 0 0;
 		margin: 0 auto;
@@ -358,30 +361,63 @@
 
 			<!-- News -->
 
-			<article class="item-wrapper w66" style="margin: 0 0 0 0;">
-				<div class="item-inner">
-					<img src="img/urban04.jpeg" alt="photo"/>
-					<h1>Lorem ipsum dolor sit amet, consectetur adipisicing.</h1>
+			<style scoped>
+
+				.news h1 {
+					font-size: 2.25em;
+					line-height: 1.1;
+					font-weight: 900;
+				}
+
+				.news .lead {
+					font-size: 1.125em;
+					font-weight: 300;
+					line-height: 1.1;
+				}
+
+			</style>
+
+			<!-- News Main Grid -->
+
+			<main class="news grid">
+
+				<div class="grid flex-column">
+
+					<article class="item-wrapper w36" style="margin: 0 0 0 0;">
+						<div class="item-inner">
+							<h1>Confirmada primeira morte por dengue em Palmital</h1>
+							<p class="lead">Homem de 77 anos estava internado na Santa Casa; Secretária de Saúde da Prefeitura abriu investigação para o caso da doença</p>
+						</div>
+					</article>
+
+					<article class="item-wrapper w66" style="margin: 0 0 0 0;">
+						<div class="item-inner">
+							<img src="img/urban04.jpeg" alt="photo"/>
+							<h1>Lorem ipsum dolor sit amet, consectetur adipisicing.</h1>
+						</div>
+					</article>
+
 				</div>
-			</article>
 
-			<!-- News Helpers Gadgets -->
+				<!-- News Helpers Gadgets -->
 
-			<div class="grid flex-wrap flex-column">
+				<div class="grid flex-wrap flex-column">
 
-				<article class="item-wrapper small">
-					<div class="item-inner white">
-						<img src="img/logotype-lato-fresh_Logo.png" alt="logo"/>
-					</div>
-				</article>
+					<article class="item-wrapper small">
+						<div class="item-inner white">
+							<img src="img/logotype-lato-fresh_Logo.png" alt="logo"/>
+						</div>
+					</article>
 
-				<article class="item-wrapper small">
-					<div class="item-inner white">
-						<img src="img/logotype-lato-fresh_Logo.png" alt="logo"/>
-					</div>
-				</article>
+					<article class="item-wrapper small">
+						<div class="item-inner white">
+							<img src="img/logotype-lato-fresh_Logo.png" alt="logo"/>
+						</div>
+					</article>
 
-			</div>
+				</div>
+
+			</main>
 
 		</div>
 
@@ -397,38 +433,9 @@
 
 <script>
 
-	var animate = function(e) {
-
-		var size = e.offsetHeight;
-
-		// current size
-		var c = 0;
-
-		// delta
-		var d = .1;
-
-		var step = function() {
-			c = size * d;
-		};
-
-		var frame = function() {
-			if (c < size) {
-				e.style.height = c + 'px';
-				step();
-			} else {
-				e.style.height = size + 'px';
-				clearInterval(i);
-			}
-		};
-
-		var i = setInterval(frame, 1);
-
-	};
-
 	document.getElementById('toggle-about').addEventListener('click', function() {
 		var e = document.getElementById('gadget-about');
 		e.classList.toggle('visible');
-		animate(e);
 	});
 
 </script>
