@@ -3,6 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Comarca</title>
+	<link rel="icon" type="image/png" href="img/logotype-lato-fresh_LogoIco.png" />
 	<meta name="viewport"
 	      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
 	<script src="dist/js/villa.min.js"></script>
@@ -54,7 +55,6 @@
 
 	.gadget-wrapper .item-wrapper {
 		max-height: 3rem;
-		max-width: 3rem;
 	}
 
 	.gadget-wrapper .item-inner {
@@ -63,6 +63,25 @@
 
 	.gadget-wrapper .item-inner img {
 		display: block;
+	}
+
+	.gadget-wrapper .item-inner.helper {
+		display: flex;
+		width: 100%;
+		height: 100%;
+		font-weight: 300;
+		line-height: 1;
+		padding: 0 0 .375rem;
+	}
+
+	.gadget-wrapper .item-inner.helper .minus {
+		font-size: 1.3125em;
+		padding: 0 .25rem 2px 3px;
+	}
+
+	.gadget-wrapper .item-inner.helper .plus {
+		font-size: 2.25em;
+		padding: 0 .875rem 0 .5rem;
 	}
 
 	#gadget-about {
@@ -99,7 +118,7 @@
 
 			<div class="grid">
 
-				<article class="item-wrapper small">
+				<article class="item-wrapper small w3">
 					<div id="toggle-about" class="item-inner grey-100">
 						<img src="img/icon-01.png" alt="logo" class="opacity-50 h-opacity-1"/>
 					</div>
@@ -110,8 +129,8 @@
 
 						<h1>Jornal da Comarca</h1>
 
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium ad at dignissimos eaque, eius eum fugiat fugit harum id itaque labore, libero officia optio pariatur, quo reprehenderit tempore vitae voluptatem.</p>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus ad alias architecto, distinctio dolorem ea et, ipsa itaque maiores, mollitia nobis possimus quam sed sint ullam veniam voluptas voluptatem voluptatum?</p>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem dicta, eveniet fugit magnam, magni non numquam placeat quaerat quisquam repellendus saepe suscipit, temporibus veritatis. Ad aliquid animi aut consequatur doloremque esse iure labore necessitatibus non, nostrum officia officiis porro soluta, sunt tempora tempore, vero. Fuga magnam natus officia?</p>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus aliquam aperiam aut cupiditate eligendi, eum expedita inventore iste iure maxime nihil nostrum officiis optio perferendis quod quos sit ullam voluptatem.</p>
 						<p>Diretor: Cláudio Pissolito</p>
 
 					</div>
@@ -121,15 +140,10 @@
 
 			<div class="grid flex-row">
 
-				<article class="item-wrapper small">
-					<div class="item-inner grey-100">
-						<img src="img/logotype-lato-fresh_Logo.png" alt="logo"/>
-					</div>
-				</article>
-
-				<article class="item-wrapper small">
-					<div class="item-inner grey-100">
-						<img src="img/logotype-lato-fresh_Logo.png" alt="logo"/>
+				<article class="item-wrapper w">
+					<div class="helper item-inner grey-100 flex justify-center align-end font-teal-900">
+						<span class="minus h-grey-400">A</span>
+						<span class="plus h-grey-400">A</span>
 					</div>
 				</article>
 
@@ -342,8 +356,8 @@
 					</article>
 
 					<article class="item-wrapper small">
-						<div class="item-inner white">
-							<img src="img/logotype-lato-fresh_Logo.png" alt="logo"/>
+						<div class="item-inner teal-900">
+							<img src="img/logotype-lato-fresh_LogoWhite.png" alt="logo"/>
 						</div>
 					</article>
 
@@ -353,7 +367,7 @@
 
 			<!-- Logo -->
 
-			<article class="item-wrapper large">
+			<article class="item-wrapper w12">
 				<div class="item-inner teal-900">
 					<img src="img/logotype-lato-fresh_LogoTypeWhite.png" alt="logo"/>
 				</div>
@@ -363,34 +377,111 @@
 
 			<style scoped>
 
-				.news h1 {
+				.news nav ul {
+					padding: 8em 1em 2.25em;
+				}
+
+				.news nav ul li {
+					margin-right: 1em;
+					display: flex;
+					align-items: flex-end;
+				}
+
+				.news nav ul a {
+					/*border-bottom-width: 2px;*/
+					/*border-bottom-style: solid;*/
+					display: flex;
+					line-height: 1;
+					padding: 0 0 4px;
+					font-size: 1.5em;
+					font-weight: 300;
+				}
+
+				.news nav ul a:hover,
+				.news nav ul a.selected {
+					font-size: 4.5em;
+					padding-bottom: 0;
+					-webkit-transition: all .3s ease .05s;
+					-moz-transition: all .3s ease .05s;
+					-ms-transition: all .3s ease .05s;
+					-o-transition: all .3s ease .05s;
+					transition: all .3s ease .05s;
+				}
+
+				.news nav ul a:hover {
+				}
+
+				.news .new {
+					padding: 0 1em .75em;
+				}
+
+				.news .new .item-inner {
+					padding: 0 0 1em;
+					border-bottom-style: solid;
+					border-bottom-width: 1px;
+					border-bottom-color: #bdbdbd;
+				}
+
+				.news .new .kicker {
+					text-transform: uppercase;
+					font-size: .75em;
+					font-weight: 900;
+				}
+
+				.news .new h1 {
 					font-size: 2.25em;
 					line-height: 1.1;
 					font-weight: 900;
 				}
 
-				.news .lead {
+				.news .new .lead {
+					margin-top: .375em;
 					font-size: 1.125em;
 					font-weight: 300;
-					line-height: 1.1;
+					line-height: 1.2;
 				}
 
 			</style>
 
 			<!-- News Main Grid -->
 
-			<main class="news grid">
+			<main class="news grid w72">
 
-				<div class="grid flex-column">
+				<div class="grid flex-row flex-wrap">
 
-					<article class="item-wrapper w36" style="margin: 0 0 0 0;">
+					<nav class="flex justify-center w66">
+						<ul class="flex width-100">
+							<li><a href="#" class="font-teal-900 selected">Cidade</a></li>
+							<li><a href="#" class="font-red-900">Mundo</a></li>
+							<li><a href="#" class="font-blue-900">Política</a></li>
+							<li><a href="#" class="font-yellow-900">Esporte</a></li>
+							<li><a href="#" class="font-green-900">Economia</a></li>
+						</ul>
+					</nav>
+
+					<article class="new item-wrapper w36" style="margin: 0 0 0 0;">
+						<div class="item-inner border-grey-500">
+							<div class="kicker font-red">Secretária de Saúde abriu investigação</div>
+							<h1>Confirmada primeira morte por dengue em Palmital</h1>
+							<p class="lead">Homem de 77 anos estava internado na Santa Casa; Secretária de Saúde da Prefeitura abriu investigação para o caso da doença</p>
+						</div>
+					</article>
+
+					<article class="new item-wrapper w30" style="margin: 0 0 0 0;">
 						<div class="item-inner">
 							<h1>Confirmada primeira morte por dengue em Palmital</h1>
 							<p class="lead">Homem de 77 anos estava internado na Santa Casa; Secretária de Saúde da Prefeitura abriu investigação para o caso da doença</p>
 						</div>
 					</article>
 
-					<article class="item-wrapper w66" style="margin: 0 0 0 0;">
+					<article class="new item-wrapper w36" style="margin: 0 0 0 0;">
+						<div class="item-inner">
+							<h1>Confirmada primeira morte por dengue em Palmital</h1>
+							<p class="lead">Homem de 77 anos estava internado na Santa Casa; Secretária de Saúde da Prefeitura abriu investigação para o caso da doença</p>
+						</div>
+					</article>
+
+					<article class="new item-wrapper w66" style="margin: 0 0 0 0;">
 						<div class="item-inner">
 							<img src="img/urban04.jpeg" alt="photo"/>
 							<h1>Lorem ipsum dolor sit amet, consectetur adipisicing.</h1>
@@ -421,12 +512,6 @@
 
 		</div>
 
-		<article class="item-wrapper full">
-			<div class="item-inner">
-				<h1></h1>
-			</div>
-		</article>
-
 	</section>
 
 </div>
@@ -437,6 +522,8 @@
 		var e = document.getElementById('gadget-about');
 		e.classList.toggle('visible');
 	});
+
+
 
 </script>
 
