@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<title>Comarca</title>
 	<link rel="icon" type="image/png" href="img/logotype-lato-fresh_LogoIco.png" />
-	<meta name="viewport"\s
+	<meta name="viewport"
 	      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
 	<script src="dist/js/villa.min.js"></script>
 	<link rel="stylesheet" href="dist/css/villa.min.css"/>
@@ -275,6 +275,11 @@
 
 	.isotope-wrapper .grid {
 		display: flex;
+		flex-wrap: wrap;
+	}
+
+	.isotope-wrapper .grid.flex-nowrap {
+		flex-wrap: nowrap;
 	}
 
 	/*
@@ -335,176 +340,299 @@
 
 <div class="isotope-wrapper border-teal-900">
 
-	<section class="isotope-container">
+	<div class="isotope-container">
 
 		<div class="grid flex-wrap">
 
-			<div class="grid">
+			<section class="grid w18">
 
-				<div class="grid flex-column">
+				<div class="grid">
 
-					<article class="item-wrapper small">
-						<div class="item-inner white">
-							<img src="img/gadget-now_Time.png" alt="logo"/>
-						</div>
-					</article>
+					<div class="grid flex-column">
 
-					<article class="item-wrapper small">
-						<div class="item-inner white">
-							<img src="img/gadget-now_WeatherCloud.png" alt="logo"/>
-						</div>
-					</article>
+						<article class="item-wrapper small">
+							<div class="item-inner white">
+								<img src="img/gadget-now_Time.png" alt="logo"/>
+							</div>
+						</article>
 
-					<article class="item-wrapper small">
-						<div class="item-inner teal-900">
-							<img src="img/logotype-lato-fresh_LogoWhite.png" alt="logo"/>
-						</div>
-					</article>
+						<article class="item-wrapper small">
+							<div class="item-inner white">
+								<img src="img/gadget-now_WeatherCloud.png" alt="logo"/>
+							</div>
+						</article>
+
+					</div>
 
 				</div>
 
-			</div>
+				<!-- Logo -->
 
-			<!-- Logo -->
+				<article class="item-wrapper w12">
+					<div class="item-inner teal-900">
+						<img src="img/logotype-lato-fresh_LogoTypeWhite.png" alt="logo"/>
+					</div>
+				</article>
 
-			<article class="item-wrapper w12">
-				<div class="item-inner teal-900">
-					<img src="img/logotype-lato-fresh_LogoTypeWhite.png" alt="logo"/>
-				</div>
-			</article>
+			</section>
 
-			<!-- News -->
+			<!-- Main Grid -->
 
 			<style scoped>
 
-				.news nav ul {
-					padding: 8em 1em 2.25em;
+				.news {
+					margin: 0 0 1.5rem;
 				}
 
-				.news nav ul li {
-					margin-right: 1em;
-					display: flex;
-					align-items: flex-end;
-				}
-
-				.news nav ul a {
-					/*border-bottom-width: 2px;*/
-					/*border-bottom-style: solid;*/
-					display: flex;
-					line-height: 1;
-					padding: 0 0 4px;
-					font-size: 1.5em;
-					font-weight: 300;
-				}
-
-				.news nav ul a:hover,
-				.news nav ul a.selected {
-					font-size: 4.5em;
-					padding-bottom: 0;
-					-webkit-transition: all .3s ease .05s;
-					-moz-transition: all .3s ease .05s;
-					-ms-transition: all .3s ease .05s;
-					-o-transition: all .3s ease .05s;
-					transition: all .3s ease .05s;
-				}
-
-				.news nav ul a:hover {
-				}
-
-				.news .new {
-					padding: 0 1em .75em;
-				}
-
-				.news .new .item-inner {
-					padding: 0 0 1em;
-					border-bottom-style: solid;
-					border-bottom-width: 1px;
-					border-bottom-color: #bdbdbd;
-				}
-
-				.news .new .kicker {
-					text-transform: uppercase;
-					font-size: .75em;
-					font-weight: 900;
-				}
-
-				.news .new h1 {
-					font-size: 2.25em;
-					line-height: 1.1;
-					font-weight: 900;
-				}
-
-				.news .new .lead {
-					margin-top: .375em;
-					font-size: 1.125em;
-					font-weight: 300;
-					line-height: 1.2;
+				.mainnav {
+					margin: 0 1rem;
+					height: 6rem;
 				}
 
 			</style>
 
-			<!-- News Main Grid -->
+			<main class="news flex-column grid max-w72">
 
-			<main class="news grid w72">
+				<!-- Main Menu -->
 
-				<div class="grid flex-row flex-wrap">
+				<nav class="mainnav width-100">
 
-					<nav class="flex justify-center w66">
+					<ul class="flex">
+
+						<li>
+							<a href="#" class="item-wrapper">
+								<span class="item-inner">
+									Noticias
+								</span>
+							</a>
+						</li>
+
+						<li>
+							<a href="#" class="item-wrapper">
+								<span class="item-inner">
+									Lista Telefonica
+								</span>
+							</a>
+						</li>
+
+						<li>
+							<a href="#" class="item-wrapper">
+								<span class="item-inner">
+									Arquivo
+								</span>
+							</a>
+						</li>
+
+					</ul>
+
+				</nav>
+
+				<!-- News -->
+
+				<div class="grid flex-column flex-wrap">
+
+					<!-- News Main Nav -->
+
+					<nav class="newsnav flex justify-between width-100">
+
+						<style>
+
+							.news .newsnav {
+								margin: 0 1rem 1.5rem;
+								height: 6rem;
+							}
+
+							.news .newsnav ul li {
+								margin-right: 1rem;
+								display: flex;
+								align-items: flex-end;
+							}
+
+							.news .newsnav ul a {
+								/*border-bottom-width: 2px;*/
+								/*border-bottom-style: solid;*/
+								display: flex;
+								line-height: 1;
+								padding: 0 0 4px;
+								font-size: 1.5em;
+								font-weight: 300;
+							}
+
+							.news .newsnav ul a:hover,
+							.news .newsnav ul a.current {
+								font-size: 3.75em;
+								padding-bottom: 0;
+								-webkit-transition: all .3s ease .05s;
+								-moz-transition: all .3s ease .05s;
+								-ms-transition: all .3s ease .05s;
+								-o-transition: all .3s ease .05s;
+								transition: all .3s ease .05s;
+							}
+
+							.news .newsnav ul a:hover {  }
+
+						</style>
+
 						<ul class="flex width-100">
-							<li><a href="#" class="font-teal-900 selected">Cidade</a></li>
-							<li><a href="#" class="font-red-900">Mundo</a></li>
-							<li><a href="#" class="font-blue-900">Política</a></li>
-							<li><a href="#" class="font-yellow-900">Esporte</a></li>
-							<li><a href="#" class="font-green-900">Economia</a></li>
+							<li><a href="#" class="newsnav-item font-teal-900 current">Primeira Página</a></li>
 						</ul>
+
+						<ul class="flex width-100 justify-end">
+							<li><a href="#" class="newsnav-item font-teal-900">Cidade</a></li>
+							<li><a href="#" class="newsnav-item font-red-900">Mundo</a></li>
+							<li><a href="#" class="newsnav-item font-blue-900">Política</a></li>
+							<li><a href="#" class="newsnav-item font-light-blue-900">Saúde</a></li>
+							<li><a href="#" class="newsnav-item font-green-900">Polícia</a></li>
+							<li><a href="#" class="newsnav-item font-yellow-900">Cultura</a></li>
+						</ul>
+
 					</nav>
 
-					<article class="new item-wrapper w36" style="margin: 0 0 0 0;">
-						<div class="item-inner border-grey-500">
-							<div class="kicker font-red">Secretária de Saúde abriu investigação</div>
-							<h1>Confirmada primeira morte por dengue em Palmital</h1>
-							<p class="lead">Homem de 77 anos estava internado na Santa Casa; Secretária de Saúde da Prefeitura abriu investigação para o caso da doença</p>
+					<section class="grid max-w72 flex-wrap grey-200" style="padding-top: 1rem;">
+
+						<style>
+
+							.news .new {
+								padding: 0 1em .75em;
+							}
+
+							.news .item-inner {
+								padding: 0 0 1em;
+								border-bottom-style: solid;
+								border-bottom-width: 1px;
+								border-bottom-color: #bdbdbd;
+								margin: 0 1em;
+							}
+
+							.news .new .kicker {
+								text-transform: uppercase;
+								font-size: .75em;
+								font-weight: 900;
+							}
+
+							.news .new h1 {
+								line-height: 1.1;
+								font-weight: 900;
+							}
+
+							.news .first-column .new h1 {
+								font-size: 1.3125em;
+							}
+
+							.news .new.new-top h1 {
+								font-size: 2.25em;
+							}
+
+							.news .new .lead {
+								margin-top: .375em;
+								font-size: 1em;
+								font-weight: 300;
+								line-height: 1.2;
+							}
+
+							.news .new.new-top .lead {
+								font-size: 1.125em;
+							}
+
+							.news h1 {
+								font-size: 1.5em;
+							}
+
+							.news p {
+								font-weight: 300;
+							}
+
+							.news .section-title {
+								margin-top: .5em;
+								font-size: 1.5em;
+								font-weight: 400;
+							}
+
+							.news .section-description {
+								font-weight: 300;
+								font-style: italic;
+								margin-bottom: .5em;
+							}
+
+						</style>
+
+						<div class="grid flex-wrap w54">
+
+							<div class="grid flex-column">
+
+								<article class="new new-top item-wrapper w18">
+									<div class="item-inner border-grey-500">
+										<div class="kicker font-red">Secretária de Saúde abriu investigação</div>
+										<h1>Confirmada primeira morte por dengue em Palmital</h1>
+										<p class="lead">Homem de 77 anos estava internado na Santa Casa; Secretária de Saúde da Prefeitura abriu investigação para o caso da doença</p>
+									</div>
+								</article>
+
+								<div class="grid flex-wrap flex-column">
+
+									<article class="new item-wrapper w18">
+										<div class="item-inner">
+											<h1>Confirmada primeira morte por dengue em Palmital</h1>
+											<p class="lead">Homem de 77 anos estava internado na Santa Casa; Secretária de Saúde da Prefeitura abriu investigação para o caso da doença</p>
+										</div>
+									</article>
+
+									<article class="new item-wrapper w18">
+										<div class="item-inner">
+											<h1>Campanha faz imunização contra a gripe</h1>
+											<p class="lead">Vacinação contra a gripe foi iniciada na segunda-feira em crianças entre seis meses e cinco anos, adultos com mais de 60, gestantes, mulheres até 45 dias dias após o parto, doentes crônicos e trabalhadores de saúde.</p>
+										</div>
+									</article>
+
+								</div>
+
+							</div>
+
+							<div class="grid flex-column">
+
+								<article class="new item-wrapper w36">
+									<figure class="item-inner">
+										<img src="img/urban04.jpeg" alt="photo"/>
+										<p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
+									</figure>
+								</article>
+
+								<section class="editorial grey-400 flex flex-column align-center">
+
+									<h1 class="section-title">Êxodo Comercial</h1>
+									<p class="section-description">editorial por Cláudio Pissolito</p>
+
+									<article class="item-wrapper w36">
+										<div class="item-inner">
+											<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aliquam, amet consequuntur cum exercitationem explicabo magnam quidem quis quisquam, sed soluta voluptates. Ab adipisci alias amet aperiam architecto beatae commodi cumque cupiditate dignissimos eius et, ex fuga, ipsa ipsum laudantium magnam modi nam natus necessitatibus nemo neque praesentium qui quos reiciendis rem repellendus repudiandae rerum, temporibus velit veritatis! Accusantium alias atque blanditiis commodi, corporis doloribus ea et explicabo fuga in ipsam libero nobis quasi quia quibusdam totam veritatis. A accusantium, ad adipisci alias aliquid architecto aspernatur assumenda at consequuntur dolorem dolorum ducimus enim error harum illum impedit ipsam laboriosam modi molestiae nostrum obcaecati perferendis perspiciatis provident repellendus repudiandae saepe tenetur, totam! Ad animi asperiores aut consequuntur cupiditate debitis deleniti ducimus earum fuga impedit nulla officiis porro rem vitae, voluptatibus. Accusamus autem debitis explicabo illum neque non pariatur quia ut voluptatum?</p>
+										</div>
+									</article>
+
+								</section>
+
+							</div>
+
 						</div>
-					</article>
 
-					<article class="new item-wrapper w30" style="margin: 0 0 0 0;">
-						<div class="item-inner">
-							<h1>Confirmada primeira morte por dengue em Palmital</h1>
-							<p class="lead">Homem de 77 anos estava internado na Santa Casa; Secretária de Saúde da Prefeitura abriu investigação para o caso da doença</p>
+						<div class="first-column grid flex-wrap flex-column">
+
+							<article class="new item-wrapper w18">
+								<div class="item-inner">
+									<h1>Jovem é preso por tráfico de drogas no bairro São José</h1>
+									<p class="lead">Polícia fez busca na casa de servente de pedreiro e encontrou porção de maconha, pedaços de plástico e balança de precisão; acusado negrou o crime</p>
+								</div>
+							</article>
+
+							<article class="new item-wrapper w18">
+								<div class="item-inner">
+									<h1>Jovem é preso por tráfico de drogas no bairro São José</h1>
+									<p class="lead">Polícia fez busca na casa de servente de pedreiro e encontrou porção de maconha, pedaços de plástico e balança de precisão; acusado negrou o crime</p>
+								</div>
+							</article>
+
 						</div>
-					</article>
 
-					<article class="new item-wrapper w36" style="margin: 0 0 0 0;">
-						<div class="item-inner">
-							<h1>Confirmada primeira morte por dengue em Palmital</h1>
-							<p class="lead">Homem de 77 anos estava internado na Santa Casa; Secretária de Saúde da Prefeitura abriu investigação para o caso da doença</p>
-						</div>
-					</article>
-
-					<article class="new item-wrapper w66" style="margin: 0 0 0 0;">
-						<div class="item-inner">
-							<img src="img/urban04.jpeg" alt="photo"/>
-							<h1>Lorem ipsum dolor sit amet, consectetur adipisicing.</h1>
-						</div>
-					</article>
-
-				</div>
-
-				<!-- News Helpers Gadgets -->
-
-				<div class="grid flex-wrap flex-column">
-
-					<article class="item-wrapper small">
-						<div class="item-inner white">
-							<img src="img/logotype-lato-fresh_Logo.png" alt="logo"/>
-						</div>
-					</article>
-
-					<article class="item-wrapper small">
-						<div class="item-inner white">
-							<img src="img/logotype-lato-fresh_Logo.png" alt="logo"/>
-						</div>
-					</article>
+					</section>
 
 				</div>
 
@@ -512,16 +640,27 @@
 
 		</div>
 
-	</section>
+	</div>
 
 </div>
 
 <script>
 
+	var i;
+
 	document.getElementById('toggle-about').addEventListener('click', function() {
 		var e = document.getElementById('gadget-about');
 		e.classList.toggle('visible');
 	});
+
+	var newsNavItems = document.getElementsByClassName('newsnav-item');
+
+	for (i = newsNavItems.length; i--; )
+		newsNavItems[i].addEventListener('click', function() {
+			for (i = newsNavItems.length; i--; )
+				newsNavItems[i].classList.remove('current');
+			this.classList.add('current');
+		});
 
 
 
