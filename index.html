@@ -17,7 +17,7 @@
 	<script src="dist/js/classList.min.js"></script>
 	<![endif]-->
 </head>
-<body class="grey-300 font-grey-900">
+<body class="font-grey-900">
 
 <style scoped>
 
@@ -474,7 +474,7 @@
 						</style>
 
 						<ul class="flex width-100">
-							<li><a href="#" class="newsnav-item font-teal-900 current">Primeira Página</a></li>
+							<li><a href="#" class="newsnav-item font-teal-900 current">Início</a></li>
 						</ul>
 
 						<ul class="flex width-100 justify-end">
@@ -488,7 +488,7 @@
 
 					</nav>
 
-					<section class="grid max-w72 flex-wrap grey-200" style="padding-top: 1rem;">
+					<section class="grid max-w72 flex-wrap" style="padding-top: 1rem;">
 
 						<style>
 
@@ -597,7 +597,7 @@
 									</figure>
 								</article>
 
-								<section class="editorial grey-400 flex flex-column align-center">
+								<section class="editorial flex flex-column align-center">
 
 									<h1 class="section-title">Êxodo Comercial</h1>
 									<p class="section-description">editorial por Cláudio Pissolito</p>
@@ -653,7 +653,7 @@
 		e.classList.toggle('visible');
 	});
 
-	var newsNavItems = document.getElementsByClassName('newsnav-item');
+	var newsNavItems = document.querySelectorAll('.newsnav-item');
 
 	for (i = newsNavItems.length; i--; )
 		newsNavItems[i].addEventListener('click', function() {
