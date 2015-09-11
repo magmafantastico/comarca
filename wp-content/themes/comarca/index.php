@@ -45,47 +45,6 @@ get_header(); ?>
 	endif;
 	?>
 
-	<?php
-
-	$args = array(
-		'post_type' => 'product'
-	);
-
-	$products = new WP_Query( $args );
-
-	if ( $products->have_posts() ) {
-		while( $products->have_posts() ) {
-			$products->the_post();
-			$price = get_post_meta( get_the_ID(), 'product_price', true ) . "\n";
-			$thumb = wp_get_attachment_image_src(get_post_meta( get_the_ID(), '_thumbnail_id', true ));
-			?>
-
-			<img src="<?php echo $thumb[0] ?>" alt="" width="<?php echo $thumb[1] ?>">
-			
-			<h1><?php the_title() ?></h1>
-			<div class='content'>
-				<?php the_excerpt() ?>
-			</div>
-			<style>
-				.price:before {
-					content: 'R$ ';
-				}
-				
-				.price:after {
-					content: ',00';
-					margin-left: -2px;
-				}
-			</style>
-			<div class="price">
-				<?php echo $price; ?>
-			</div>
-			<?php
-		}
-	} else {
-		echo 'Oh ohm no products!';
-	}
-
-	?>
 
 </main><!-- .site-main -->
 
