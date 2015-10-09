@@ -247,7 +247,7 @@ function twentyfifteen_scripts() {
 		'collapse' => '<span class="screen-reader-text">' . __( 'collapse child menu', 'twentyfifteen' ) . '</span>',
 	) );
 }
-add_action( 'wp_enqueue_scripts', 'twentyfifteen_scripts' );
+//add_action( 'wp_enqueue_scripts', 'twentyfifteen_scripts' );
 
 /**
  * Add featured image as background image to post navigation elements.
