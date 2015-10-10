@@ -9,20 +9,6 @@ get_header(); ?>
 
 <main id="main" class="main" role="main">
 
-	<?php if ( is_home() && ! is_front_page() ) : ?>
-
-		<header class="main-header">
-
-			<div class="container">
-
-				<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-
-			</div>
-
-		</header>
-
-	<?php endif; ?>
-
 	<div class="container">
 
 		<?php if ( have_posts() ) : ?>

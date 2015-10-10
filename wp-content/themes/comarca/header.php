@@ -6,7 +6,7 @@
  */
 ?>
 <!DOCTYPE html>
-<html <?php language_attributes(); ?> class="no-js">
+<html <?php language_attributes(); ?> class="no-js lato">
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport"
@@ -25,18 +25,48 @@
 
 <header class="header">
 
-	<div class="branding">
+	<div class="container">
 
-		<?php
-		if ( is_front_page() && is_home() ) : ?>
-			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-		<?php else : ?>
-			<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-		<?php endif;
-		?>
+		<style>
+
+			.branding {
+				padding: 2.25em 0;
+			}
+
+		</style>
+
+		<div class="branding flex">
+
+			<img src="<?php echo esc_url(get_template_directory_uri()); ?>/img/logotype-lato-fresh_LogoTypeWhite.png" class="teal-900" alt="" width="160">
+
+		</div>
+
+		<style>
+
+			.nav-menu {
+				border-top: solid 1px #000000;
+				display: flex;
+				justify-content: space-between;
+				padding: .5em 0 1.5em;
+				font-weight: 700;
+			}
+
+		</style>
+
+		<?php if ( has_nav_menu( 'primary' ) ) : ?>
+			<nav id="site-navigation" class="main-navigation" role="navigation">
+				<?php
+				// Primary navigation menu.
+				wp_nav_menu( array(
+					'menu_class'     => 'nav-menu',
+					'theme_location' => 'primary',
+				) );
+				?>
+			</nav><!-- .main-navigation -->
+		<?php endif; ?>
 
 	</div>
 
 </header>
 
-<?php get_sidebar(); ?>
+<?php //get_sidebar(); ?>
