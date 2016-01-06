@@ -41,6 +41,7 @@
 		width: 100%;
 		max-width: 96em;
 		margin: 0 auto;
+		padding: 0 1em;
 		height: 100%;
 	}
 
@@ -54,17 +55,95 @@
 
 </style>
 
-<div class="Maia Maia--fixed">
+<div class="Maia Maia--fixed white">
 
-	<div class="MaiaContainer flex">
+	<div class="MaiaContainer flex justify-between">
 
 		<a href="#" class="flex align-center">
 			<span>+</span>
 		</a>
 
+		<div id="now" class="Now flex align-center"></div>
+
+		<div class="Acceptability"></div>
+
 	</div>
 
 </div>
+
+<script>
+
+	var Now = (function() {
+
+		function Now(viewport) {
+
+			var self = this;
+
+			this.viewport = viewport;
+
+		}
+
+		Now.prototype.init = function() {
+
+			var self = this;
+
+			var request = new XMLHttpRequest();
+			request.open('GET', 'http://api.openweathermap.org/data/2.5/weather?q=palmital,br&units=metric&appid=84cbb8f0f0a4ff4afd006f5a4d8917c2', true);
+
+			request.onreadystatechange = function() {
+				if (this.readyState === 4) {
+					if (this.status >= 200 && this.status < 400) {
+						// Success!
+						var data = JSON.parse(this.responseText);
+						if (!self.viewport.innerHTML.length) self.viewport.innerHTML = data.main.temp;
+						else self.viewport.innerHTML = data.main.temp + 'º | ' + self.viewport.innerHTML;
+					} else {
+						// Error :(
+					}
+				}
+			};
+
+			request.send();
+			request = null;
+
+			var request = new XMLHttpRequest();
+			request.open('GET', 'https://query.yahooapis.com/v1/public/yql?q=select%20*from%20yahoo.finance.xchange%20where%20pair%20in%20%28%22USDBRL%22%29&format=json&diagnostics=true&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys&callback=', true);
+
+			request.onreadystatechange = function() {
+				if (this.readyState === 4) {
+					if (this.status >= 200 && this.status < 400) {
+						// Success!
+						var data = JSON.parse(this.responseText);
+
+						if (self.viewport.innerHTML.length) self.viewport.innerHTML = + self.viewport.innerHTML + 'º | Dólar ' + data.query.results.rate.Rate;
+						else self.viewport.innerHTML = 'Dólar ' + data.query.results.rate.Rate;
+
+						console.log(data.query.results);
+
+					} else {
+						// Error :(
+					}
+				}
+			};
+
+			request.send();
+			request = null;
+
+		};
+
+		return Now;
+
+	})();
+
+</script>
+
+<script>
+
+	var now = new Now(document.getElementById('now'));
+
+	now.init();
+
+</script>
 
 <style>
 

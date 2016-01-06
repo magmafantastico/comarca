@@ -23,6 +23,43 @@ get_header(); ?>
 
 <main id="main" class="Main" role="main">
 
+	<style>
+
+		.post {
+			padding: 1em .5em 1em 1em;
+			width: 18em;
+		}
+
+		.post:first-of-type {
+			width: 36em;
+		}
+
+		.post .entry-title {
+			color: #004d40;
+			font-size: 1.5em;
+			font-weight: 900;
+			line-height: 1.15;
+		}
+
+		.post:first-of-type .entry-title {
+			font-size: 3em;
+			line-height: 1.05;
+		}
+
+		.post .entry-title:hover {
+			color: #00796b;
+		}
+
+		.post .entry-tag {
+			color: #004d40;
+			text-transform: uppercase;
+			font-weight: 900;
+			letter-spacing: 0;
+			font-size: .875em;
+		}
+
+	</style>
+
 	<div class="MainContainer flex flex-wrap">
 
 		<?php if ( have_posts() ) : ?>

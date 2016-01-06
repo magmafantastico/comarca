@@ -10,33 +10,6 @@
  */
 ?>
 
-<style>
-
-	.post {
-		padding: 1em;
-		width: 18em;
-	}
-
-	.post:first-of-type {
-		width: 36em;
-	}
-
-	.post .entry-title {
-		color: #004d40;
-		font-size: 1.5em;
-		font-weight: 900;
-	}
-
-	.post:first-of-type .entry-title {
-		font-size: 3em;
-	}
-
-	.post .entry-title:hover {
-		color: #00796b;
-	}
-
-</style>
-
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<?php
 		// Post thumbnail.
@@ -44,17 +17,34 @@
 	?>
 
 	<header class="entry-header">
+
+		<div class="entry-tag">
+
+			<?php
+
+				// get the tag
+				$tags = get_the_tags();
+				$c = 0;
+				if ($tags) foreach($tags as $tag) if ($c++ == 1) echo $tag->name . ' ';
+
+			?>
+
+		</div>
+
 		<?php
+
 			if ( is_single() ) :
 				the_title( '<h1 class="entry-title">', '</h1>' );
 			else :
 				the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' );
 			endif;
+
 		?>
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">
 		<?php
+
 			/* translators: %s: Name of current post */
 //			the_content( sprintf(
 //				__( 'Continue reading %s', 'comarca' ),
