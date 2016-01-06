@@ -7,9 +7,23 @@
 
 get_header(); ?>
 
-<main id="main" class="main" role="main">
+<style>
 
-	<div class="container">
+	.Main {
+		margin: 2.25em 0;
+	}
+
+	.MainContainer {
+		max-width: 72em;
+		width: 100%;
+		margin: 0 auto;
+	}
+
+</style>
+
+<main id="main" class="Main" role="main">
+
+	<div class="MainContainer flex flex-wrap">
 
 		<?php if ( have_posts() ) : ?>
 

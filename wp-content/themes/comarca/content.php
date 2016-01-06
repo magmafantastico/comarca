@@ -10,10 +10,37 @@
  */
 ?>
 
+<style>
+
+	.post {
+		padding: 1em;
+		width: 18em;
+	}
+
+	.post:first-of-type {
+		width: 36em;
+	}
+
+	.post .entry-title {
+		color: #004d40;
+		font-size: 1.5em;
+		font-weight: 900;
+	}
+
+	.post:first-of-type .entry-title {
+		font-size: 3em;
+	}
+
+	.post .entry-title:hover {
+		color: #00796b;
+	}
+
+</style>
+
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<?php
 		// Post thumbnail.
-		comarca_post_thumbnail();
+//		comarca_post_thumbnail();
 	?>
 
 	<header class="entry-header">
@@ -34,7 +61,7 @@
 //				the_title( '<span class="screen-reader-text">', '</span>', false )
 //			) );
 
-			the_excerpt();
+			/*the_excerpt();
 
 			wp_link_pages( array(
 				'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'comarca' ) . '</span>',
@@ -43,7 +70,7 @@
 				'link_after'  => '</span>',
 				'pagelink'    => '<span class="screen-reader-text">' . __( 'Page', 'comarca' ) . ' </span>%',
 				'separator'   => '<span class="screen-reader-text">, </span>',
-			) );
+			) );*/
 		?>
 	</div><!-- .entry-content -->
 
@@ -55,7 +82,7 @@
 	?>
 
 	<footer class="entry-footer">
-		<?php comarca_entry_meta(); ?>
+		<?php /*comarca_entry_meta();*/ ?>
 		<?php /*edit_post_link( __( 'Edit', 'twentyfifteen' ), '<span class="edit-link">', '</span>' ); */?>
 	</footer><!-- .entry-footer -->
 
